@@ -1,3 +1,6 @@
+require('dotenv').config();
+const {CONNECTION_URI} = process.env;
+
 let nextEmp = 5
 
 module.exports = {
