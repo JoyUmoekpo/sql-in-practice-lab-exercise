@@ -40,5 +40,12 @@ module.exports = {
                 nextEmp += 2
             })
             .catch(err => console.log(err))
+    },
+
+    getAllClients: (req, res) => {
+        sequelize.query(`select * from cc_clients c
+        join cc_users u on c.user_id = u.user_id;`)
+            .then(dbRes => res.status(200).send(dbRes[0]))
+            .catch(err => console.log(err))
     }
 }
